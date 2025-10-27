@@ -25,3 +25,4 @@ jobs:
       # 3️⃣ Build and test the app with Maven
       - name: Build and test with Maven
         run: mvn clean verify
+        working-directory: TP2 - Github Actions/simpleapi/
