@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn clean verify
-        working-directory: "TP2 - Github Actions/simpleapi/"
+        working-directory: "TP1/backendapi - docker compose/backend-api/src"
 
   # 2. Build and optionally push Docker images
   build-and-push-docker-image:
@@ -44,15 +44,15 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: "TP1/backendapi - docker compose/backend-api/src"
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend-simple:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend-api:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
       # Build database image
       - name: Build image and push database
         uses: docker/build-push-action@v6
         with:
-          context: "TP1/backendapi - docker compose/"
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/db-simple:latest
+          context: "TP1/Docker - database"
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mypostgres:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
       # Build apache server image
