@@ -28,6 +28,8 @@ jobs:
 
       - name: SonarCloud analysis
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=Lutow_TP_Actions -Dsonar.organization=lutow -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file TP2 - Github Actions/simpleapi/pom.xml
+        working-directory: "TP2 - Github Actions/simpleapi/"
+  
   build-and-push-docker-image:
     needs: test-backend
     runs-on: ubuntu-24.04
