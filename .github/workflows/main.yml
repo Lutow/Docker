@@ -43,7 +43,7 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v6
         with:
-          context: "TP2 - Github Actions/simpleapi/"
+          context: "TP1/backendapi - docker compose/backend-api/src"
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend-simple:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
@@ -51,7 +51,7 @@ jobs:
       - name: Build image and push database
         uses: docker/build-push-action@v6
         with:
-          context: "./path/to/your/db"
+          context: "TP1/backendapi - docker compose/"
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/db-simple:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
@@ -59,7 +59,7 @@ jobs:
       - name: Build image and push htpp server
         uses: docker/build-push-action@v6
         with:
-          context: ""
+          context: "TP1/backendapi - docker compose/apache"
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/http_server:latest
           push: ${{ github.ref == 'refs/heads/main' }}
       
