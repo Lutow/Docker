@@ -12,17 +12,17 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      # 1️⃣ Checkout your code
+      #1 - Checkout your code
       - uses: actions/checkout@v4
 
-      # 2️⃣ Set up JDK 21 using the official action
+      #2 - Set up JDK 21 using the official action
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
-      # 3️⃣ Build and test the app with Maven
+      #3️ - Build and test the app with Maven
       - name: Build and test with Maven
         run: mvn clean verify
         working-directory: TP2 - Github Actions/simpleapi/
