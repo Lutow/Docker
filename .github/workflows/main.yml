@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn clean verify
-        working-directory: "TP1/backendapi - docker compose/backend-api/src"
+        working-directory: "TP2 - Github Actions/simpleapi"
 
   # 2. Build and optionally push Docker images
   build-and-push-docker-image:
