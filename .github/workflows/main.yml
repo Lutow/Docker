@@ -54,3 +54,12 @@ jobs:
           context: "./path/to/your/db"
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/db-simple:latest
           push: ${{ github.ref == 'refs/heads/main' }}
+
+      # Build apache server image
+      - name: Build image and push htpp server
+        uses: docker/build-push-action@v6
+        with:
+          context: ""
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/http_server:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
+      
