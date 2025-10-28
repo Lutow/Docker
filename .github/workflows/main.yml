@@ -24,11 +24,11 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn clean verify
-        working-directory: "TP2 - Github Actions/simpleapi"
+        working-directory: "TP1/backendapi - docker compose/src"
 
       - name: SonarCloud analysis
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=Lutow_TP_Actions -Dsonar.organization=lutow -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./pom.xml
-        working-directory: "TP2 - Github Actions/simpleapi"
+        working-directory: "TP1/backendapi - docker compose/src"
   
   build-and-push-docker-image:
     needs: test-backend
@@ -46,7 +46,7 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v6
         with:
-          context: "TP2 - Github Actions/simpleapi"
+          context: "TP1/backendapi - docker compose/src"
           tags: ${{ secrets.DOCKER_USERNAME }}/backend-api:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
