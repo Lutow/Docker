@@ -27,9 +27,9 @@ Docker compose is very important because it simplifies multi-container managemen
 
 Question 1-7: Document docker-compose most important commands.
 
-We can start all the services defined in the docker-compose.yml with 'docker-compose up' or 'docker-compose start' if it existed previously, with '-d' option if we want detached mode.
-We can stop it using 'docker-compose stop', and remove the associated containers and networks with 'docker-compose down'.
-Beside that, almost every key words like 'rm', 'pull', 'build', 'push', 'logs' or 'ps' can be used additionnally using docker-compose.
+We can start all the services defined in the docker-compose.yml with `docker-compose up` or `docker-compose start` if it existed previously, with `-d` option if we want detached mode.
+We can stop it using `docker-compose stop`, and remove the associated containers and networks with `docker-compose down`.
+Beside that, almost every key words like `rm`, `pull`, `build`, `push`, `logs` or `ps` can be used additionnally using docker-compose.
 
 Question 1-10: Why do we put our images into an online repo?
 
